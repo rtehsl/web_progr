@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевязко Алина. Цитата</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        .citation {
+            border: 1px solid red;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(cornflowerblue, white);
+        }
+        .text {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author {
+            text-align: left;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+            text-shadow: 4px 3px 3px rgba(255, 0, 0, 0.5);
+        }
+        .citatio {
+            border: 1px solid blue;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(green, white);
+        }
+        .tex {
+            font-size: 28px;
+            font-weight: lighter;
+            text-align: center;
+        }
+        .autho {
+            text-align: left;
+            font-size: 28px;
+            opacity: 0.5;
+            margin-top: 28px;
+            margin-left: 45%;
+            text-shadow: 4px 3px 3px rgba(0, 0, 250, 0.5);
+        }
+        .citati {
+            border: 1px solid blue;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(black, white)
+        }
+        .te {
+            font-size: 28px;
+            font-weight:lighter;
+            text-align: center;
+        }
+        .auth {
+            text-align: left;
+            font-size: 28px;
+            opacity: 0.5;
+            margin-top: 28px;
+            margin-left: 45%;
+            text-shadow: 4px 3px 3px rgba(0, 300, 0, 0.5);
+        }
+        .citat {
+            border: 1px solid green;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(greenyellow, white)
+        }
+        .t {
+            font-size: 28px;
+            font-style: italic;
+            text-align: center;
+        }
+        .aut {
+            text-align: left;
+            font-size: 28px;
+            opacity: 0.5;
+            margin-top: 28px;
+            margin-left: 45%;
+            text-shadow: 4px 3px 3px rgba(255, 0, 0, 0.5);
+        }
+        .cita {
+            border: 5px solid black;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(purple, white)
+        }
+        .e {
+            font-size: 35px;
+            font-style: italic;
+            text-align: right;
+        }
+        .aut {
+            text-align: left;
+            font-size: 35px;
+            opacity: 0.7;
+            margin-top: 28px;
+            margin-left: 60%;
+            text-shadow: 4px 3px 3px rgba(255, 200, 0, 0.5);
+        }
+        .cit {
+            border: 5px solid purple;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(yellow, white)
+        }
+        .x {
+            font-size: 18px;
+            font-style: italic;
+            text-align: left;
+        }
+        .au {
+            text-align: left;
+            font-size: 35px;
+            opacity: 0.7;
+            margin-top: 28px;
+            margin-left: 60%;
+            text-shadow: 4px 3px 3px rgba(255, 200, 180, 0.5);
+        }
+        .ci {
+            border: 10px solid yellow;
+            padding: 8px;
+            border-radius: 8px;
+            margin: 15px;
+            box-shadow: 10px 10px 5px #0003;
+            background: linear-gradient(yellow, green, white)
+        }
+        .x {
+            font-size: 21px;
+            font-style: oblique;
+            text-align: justify;
+        }
+        .au {
+            text-align: left;
+            font-size: 35px;
+            opacity: 0.7;
+            margin-top: 28px;
+            margin-left: 60%;
+            text-shadow: 4px 3px 3px rgba(15, 230, 78, 0.5);
+        }
+        .c {
+            border: 10px solid black;
+            padding: 8px;
+            border-radius: 8px;
+            margin: 15px;
+            box-shadow: 10px 10px 5px #0007;
+            background: linear-gradient(red, orange, yellow, green, cornflowerblue, purple)
+        }
+        .xt {
+            font-size: 21px;
+            font-style: oblique;
+            text-align: justify;
+        }
+        .ua {
+            text-align: left;
+            font-size: 35px;
+            opacity: 0.7;
+            margin-top: 28px;
+            margin-left: 60%;
+            text-shadow: 4px 3px 3px rgba(200, 230, 250, 0.5);
+        }
+        .i {
+            border: 1px solid black;
+            padding: 8px;
+            border-radius: 8px;
+            margin: 15px;
+            box-shadow: 10px 10px 5px #0003;
+            background: black
+        }
+        .ext {
+            font-size: 21px;
+            font-style: oblique;
+            text-align: center;
+        }
+        .uat {
+            text-align: left;
+            font-size: 35px;
+            opacity: 0.7;
+            margin-top: 28px;
+            margin-left: 60%;
+            text-shadow: 4px 3px 3px rgba(200, 0, 250, 0.5);
+        }
+        .ion {
+            border: 10px solid black;
+            padding: 8px;
+            border-radius: 10px;
+            margin: 15px;
+            box-shadow: 10px 10px 5px #0003;
+            background: linear-gradient(orange, yellow, green)
+        }
+        .xet {
+            font-size: 25px;
+            font-style: oblique;
+            text-align: justify;
+        }
+        .tu {
+            text-align: left;
+            font-size: 35px;
+            opacity: 0.7;
+            margin-top: 28px;
+            margin-left: 60%;
+            text-shadow: 4px 3px 3px rgba(0, 150, 250, 0.5);
+        }
+        .on {
+            border: 10px solid rgb(35, 168, 150);
+            padding: 8px;
+            border-radius: 10px;
+            margin: 15px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(to right top, yellow, orange)
+        }
+        .xt {
+            font-size: 25px;
+            font-style: oblique;
+            text-align: justify;
+        }
+        .ta {
+            text-align: center;
+            font-size: 35px;
+            opacity: 0.7;
+            margin-top: 28px;
+            margin-left: 60%;
+            text-shadow: 4px 3px 3px rgba(0, 150, 250, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>Цитата</header>
+
+    <main>
+        <div class="citation">
+            <div class="text">
+                Стремитесь не к успеху, а к ценностям, которые он дает.
+            </div>
+            <div class="author">
+                Альберт Эйнштейн
+            </div>
+        </div>
+        
+        <div class="citatio">
+            <div class="tex">
+                Дайте человеку цель, 
+                ради которой стоит жить и он сможет выжить в любой ситуации.
+            </div>
+            <div class="autho">
+                Гёте
+            </div>
+        </div>
+
+        <div class="citati">
+            <div class="te">
+                Усилия не всегда способны приносить счастье, 
+                но невозможно счастье без усилий. 
+            </div>
+            <div class="auth">
+                Бенджамин Дизраэли 
+            </div>
+        </div>
+
+        <div class="citat">
+            <div class="t">
+                Твой человек не тот, кому «с тобой хорошо»&mdash;
+                с тобой может быть хорошо сотне людей. 
+                Твоему — «без тебя плохо».
+            </div>
+            <div class="aut">
+                Эрих Мария Ремарк
+            </div>
+        </div>
+
+        <div class="cita">
+            <div class="e">
+                Люди были созданы для того, чтобы их любили, 
+                а вещи были созданы для того, чтобы ими пользовались. 
+                Мир в хаосе потому, что все наоборот.
+            </div>
+            <div class="aut">
+                Далай-лама
+            </div>
+        </div>
+
+        <div class="cit">
+            <div class="x">
+                Я не уверен, что вы можете назвать много великих изобретений, 
+                которые были созданы женатыми мужчинами.
+            </div>
+            <div class="au">
+                Никола Тесла
+            </div>
+        </div>
+        <div class="ci">
+            <div class="t">
+                Удивительно устроен человек — он огорчается, 
+                когда теряет богатство, и равнодушен к тому, 
+                что безвозвратно уходят дни его жизни.
+            </div>
+            <div class="a">
+                &copy;Абу-ль-Фаралж
+            </div>
+        </div>
+        <div class="c">
+            <div class="xt">
+                Наши достоинства и наши недостатки неразделимы, как сила и материя. 
+                Когда они отделяются, то человека больше нет.
+            </div>
+            <div class="ua">
+                Никола Тесла
+            </div>
+        </div>
+
+        <div class="i">
+            <div class="ext">
+                Жизнь — это то, что происходит с тобой, пока ты строишь другие планы.
+            </div>
+            <p>
+                <img src="lennon.jpg" width="100%">
+            </p>
+            <div class="uat">
+                &copy;Джон Леннон
+            </div>
+        </div>
+
+        <div class="ion">
+            <div class="xet">
+                Из двух ссорящихся виновен тот, кто умнее.
+            </div>
+            <div class="tu">
+                Гёте
+            </div>
+        </div>
+
+        <div class="on">
+            <div class="xt">
+                Если бы ваша ненависть могла быть 
+                превращена в электричество, это осветило бы весь мир.
+            </div>
+            <div class="ta">
+                Никола Тесла
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
