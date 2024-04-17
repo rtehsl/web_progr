@@ -15,6 +15,14 @@
             let result = a+b;
             alert('Сумма '+a+' и '+b+' равна' + result);
         }
+        function showAuthor() {
+            let author = 'Автор страницы:\nПеревязко Алина Юрьевна';
+            alert(author);
+        }
+        function showThanks() {
+            let thanks = 'Спасибо, что посетили мой сайтик! \nНа случай, если буду нужен, то я там же, где и был, когда был не нужен.';
+            alert(thanks);
+        }
     </script>
     <style>
         .message {
@@ -28,19 +36,25 @@
             border-radius: 20px;
 
         }
+        header {
+            cursor: pointer;
+        }
+        footer {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-   <header>
+   <header onclick="showAuthor()">
     нгту, ФБ, Лабораторная работа 5
    </header>
    
    <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message"  onclick="showAuthor()">Узнать, кто автор страницы</div>
    </main>
 
-   <footer>
+   <footer ondblclick="showThanks()">
        &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
    </footer>
 </body>
