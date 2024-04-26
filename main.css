@@ -1,66 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --ragin-beige: #fff5d7;
+    --coral-pink: #ff5e6c;
+    --sleuthe-yellow: #feb300;
+    --pink-leaf: #ffaaab;
+    --text-color: #333;
+    --menu-color: #ffffff;
+}
+
 body {
-    background-color: powderblue;
-    color: blue;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
+    background: linear-gradient(135deg, var(--ragin-beige), var(--pink-leaf));
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 main {
-    color: cornflowerblue;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 10px 20px 45px;
+    flex-grow: 1;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 20px;
 }
 
 header {
-    background-color: cornflowerblue;
-    color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to right, var(--ragin-beige), var(--coral-pink));
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--ragin-beige), var(--coral-pink));
+    opacity: 0.8;
+    z-index: -1;
 }
 
 footer {
-    background-color: cornflowerblue;
-    color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16pt;
-    text-align: right;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+    background: var(--ragin-beige);
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--coral-pink), var(--ragin-beige));
+    opacity: 0.8;
+    z-index: -1;
 }
 
 a {
-    color: green;
+    color: var(--coral-pink);
     text-decoration: none;
-    transition: 1s 2s;
-    }
- 
-a:link {
-    color:blueviolet;
+    transition: color 0.3s ease;
 }
 
-a:visited {
-    color:blue;
-}
 a:hover {
-    color: red;
+    color: var(--sleuthe-yellow);
     text-decoration: underline;
-    transition: 0.2s;
 }
 
 a:active {
-    color: black;
+    color: var(--text-color);
     opacity: 0.7;
 }
 
 div.menu {
-    border: 7px solid #00880080;
-    border-radius: 5px;
-    width: 300px;
-    margin: 0 auto;
+    border: 2px solid var(--sleuthe-yellow);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--menu-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 div.menu:hover {
-    background-color: #ffffff30;
-    box-shadow: 0 0 15px #00000030;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    border-color: var(--coral-pink); 
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--ragin-beige), var(--pink-leaf));
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
 }

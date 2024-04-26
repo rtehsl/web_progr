@@ -53,14 +53,22 @@
             let thanks = 'Спасибо, что посетили мой сайтик! \nНа случай, если буду нужен, то я там же, где и был, когда был не нужен.';
             alert(thanks);
         }
+        function changeOutput (buttonNum, backColor, textColor, borderRad, textAlign) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderRadius = borderRad;
+            output.style.textAlign = textAlign;
+        }
     </script>
     <style>
         .message {
             cursor: pointer;
             padding: 20px;
             text-align: center;
-            background-color: whitesmoke;
-            border: 2px dashed paleturquoise;
+            background-color: #ffffff;
+            border: 2px dashed #feb300;
             margin: 15px;
             display: inline-block;
             border-radius: 20px;
@@ -71,6 +79,11 @@
         }
         footer {
             cursor: pointer;
+        }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
         }
     </style>
 </head>
@@ -83,14 +96,18 @@
         <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
-
         <div class="message" onclick="showRaz()">Найти разность чисел</div>
-
         <div class="message" onclick="showPro()">Найти произведение чисел</div>
-
         <div class="message" onclick="showDel()">Найти деление чисел</div>
-
         <div class="message"  onclick="showAuthor()">Узнать, кто автор страницы</div>
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, '#ffaaab', '#ff5e6c', '20px', 'center')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, '#ffaaab', '#ff5e6c', '20px', 'center')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, '#ffaaab', '#ff5e6c', '20px', 'center')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, '#ffaaab', '#ff5e6c', '20px', 'center')">
+        </div>
+
+        <div id="output"></div>
    </main>
 
    <footer ondblclick="showThanks()">
