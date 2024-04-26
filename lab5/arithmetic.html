@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевязко Алина Юрьевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon_io/favicon-16x16.png">
+    <link rel="icon" href="../favicon_io/favicon-32x32.png">
+    <script>
+        function showSum() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a+b;
+            alert('Cумма '+a+' и '+b+' равна' + result);
+        }
+        function showRaz() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a-b;
+            alert('Разность '+a+' и '+b+' равна' + result);
+        }
+        function showPro() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a*b;
+            alert('Произведение '+a+' и '+b+' равна' + result);
+        }
+        function showDel() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a/b;
+            alert('Деление '+a+' и '+b+' равна' + result);
+        }
+        function showAuthor() {
+            let author = 'Автор страницы:\nПеревязко Алина Юрьевна';
+            alert(author);
+        }
+        function showThanks() {
+            let thanks = 'Спасибо, что посетили мой сайтик! \nНа случай, если буду нужен, то я там же, где и был, когда был не нужен.';
+            alert(thanks);
+        }
+    </script>
+    <style>
+        .message {
+            cursor: pointer;
+            padding: 20px;
+            text-align: center;
+            background-color: whitesmoke;
+            border: 2px dashed paleturquoise;
+            margin: 15px;
+            display: inline-block;
+            border-radius: 20px;
+
+        }
+        header {
+            cursor: pointer;
+        }
+        footer {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <header onclick="showAuthor()">
+    нгту, ФБ, Лабораторная работа 5
+   </header>
+   
+   <main>
+        <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
+        <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+        <div class="message" onclick="showSum()">Найти сумму чисел</div>
+
+        <div class="message" onclick="showRaz()">Найти разность чисел</div>
+
+        <div class="message" onclick="showPro()">Найти произведение чисел</div>
+
+        <div class="message" onclick="showDel()">Найти деление чисел</div>
+
+        <div class="message"  onclick="showAuthor()">Узнать, кто автор страницы</div>
+   </main>
+
+   <footer ondblclick="showThanks()">
+       &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+   </footer>
+</body>
+</html>

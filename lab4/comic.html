@@ -16,24 +16,29 @@
             border: 2px dotted paleturquoise;
             margin: 15px;
             box-shadow: 5px 5px 20px;
-            display: none; 
+            display: flex;
+            opacity: 0; 
+            transition: opacity 1.5s;
         }
 
-        img:hover ~ .first {
-            display: block;
+        img:hover + .first {
+            opacity: 1;
+            transition: 0.5s;
         }
 
         img:hover ~ .second {
-            display: block;
+            opacity: 1;
+            transition: 1s 0.5s;
         }
 
         img:hover ~ .third {
-            display: block;
+            opacity: 1;
+            transition: 1s 1s;
         }
 
         img:hover ~ .fourth {
-            display: block;
-            transition: 1.4s;
+            opacity: 1;
+            transition: 1s 1.5s;
         }
 
 
