@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевязко Алина Юрьевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon_io/favicon-16x16.png">
+    <link rel="icon" href="../favicon_io/favicon-32x32.png">
+    <style>
+        img{
+            width: 30%;
+            height: 30%;
+        }
+  
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .wear {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .wear h2 {
+            color: #333333;
+        }
+        .wear select {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            background-color: #ffffff;
+            color: #333333;
+        }
+        .wear button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .wear button:hover {
+            background-color: #0056b3;
+        }
+        .wear img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 120px); 
+        }
+    </style>
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if(color == 'Красный' && type == 'Футболка') {
+                wear.src = 'красная ф.jpg';
+            }
+            else if (color === 'Белый' && type === 'Футболка') {
+                wear.src = 'белая ф.jpg';
+            } 
+            else if (color === 'Черный' && type === 'Футболка') {
+                wear.src = 'черная ф.jpg';
+            } 
+            else if (color === 'Красный' && type === 'Поло') {
+                wear.src = 'красное п.jpg';
+            } 
+            else if (color === 'Белый' && type === 'Поло') {
+                wear.src = 'белое п.jpg';
+            } 
+            else if (color === 'Черный' && type === 'Поло') {
+                wear.src = 'черное п.jpg'; 
+            } 
+            else if (color === 'Красный' && type === 'Майка') {
+                wear.src = 'краснаям.jpg';
+            } 
+            else if (color === 'Белый' && type === 'Майка') {
+                wear.src = 'белаям.jpg'; 
+            } else if (color === 'Черный' && type === 'Майка') {
+                wear.src = 'черная м.jpg';
+            }
+        }
+        function resetFilter() {
+            document.getElementById('wear-color').value = '';
+            document.getElementById('wear-type').value = '';
+            document.getElementById('wear').src = '';
+        }
+    </script>
+</head>
+<body>
+   <header>
+    НГТУ, ФБ, Лабораторная работа 6
+   </header>
+   
+   <main>
+    <div class="container">
+        <div class="wear">
+            <h2>Выберите одежду:</h2>
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Черный</option>
+            </select><br>
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+
+            <button onclick="filter()">OK</button>
+            <button onclick="resetFilter()">Вернуться</button>
+
+            <img id="wear" alt="Одежда">
+        </div>
+    </div>
+   </main>
+   <footer>
+       &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+   </footer>
+</body>
+</html>
