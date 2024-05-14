@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 5. Перевязко Алина Юрьевна</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon_io/favicon-16x16.png">
+    <link rel="icon" href="../favicon_io/favicon-32x32.png">
+    <script> 
+        function Remove(circle) { 
+            circle.style.opacity = '0'; 
+        } 
+ 
+        function Return() { 
+            document.querySelectorAll('.circle').forEach(function(circle) { 
+                circle.style.opacity = '1'; 
+            }); 
+        } 
+        function showThanks() {
+            let thanks = 'Спасибо, что посетили мой сайтик! \nНа случай, если буду нужен, то я там же, где и был, когда был не нужен.';
+            alert(thanks);
+        }
+    </script>
+    <style> 
+        .circle{ 
+            color: white;
+            border-radius: 50%; 
+            border: solid 3px; 
+            width: 100px; 
+            height: 100px; 
+            display: inline-block; 
+            text-align: center; 
+            font-size: 50pt; 
+            position: absolute; 
+            cursor: pointer; 
+            transition: 0.5s; 
+            margin: 10px;
+            left: calc(10% + 80% * var(--rand-x));
+            top: calc(10% + 80% * var(--rand-y));
+        }
+        .circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="circle" id="output1" style="background-color: #FF69B4; --rand-x: 0.1; --rand-y: 0.2; opacity: 1;" onclick="Remove(this)">1</div> 
+        <div class="circle" id="output2" style="background-color: #FFD700; --rand-x: 0.9; --rand-y: 0.5; opacity: 1;" onclick="Remove(this)">2</div> 
+        <div class="circle" id="output3" style="background-color: #FFC0CB; --rand-x: 0.7; --rand-y: 0.1; opacity: 1;" onclick="Remove(this)">3</div> 
+        <div class="circle" id="output4" style="background-color: #DC143C; --rand-x: 0.4; --rand-y: 0.6; opacity: 1;" onclick="Remove(this)">4</div> 
+        <div class="circle" id="output5" style="background-color: #A9A9A9; --rand-x: 0.6; --rand-y: 0.6; opacity: 1;" onclick="Remove(this)">5</div> 
+        <div class="circle" id="output6" style="background-color: #0000FF; --rand-x: 0.3; --rand-y: 0.3; opacity: 1;" onclick="Remove(this)">6</div> 
+        <div class="circle" id="output7" style="background-color: #008000; --rand-x: 0.5; --rand-y: 0.9; opacity: 1;" onclick="Remove(this)">7</div> 
+        <div class="circle" id="output8" style="background-color: #ADD8E6; --rand-x: 0.4; --rand-y: 0.1; opacity: 1;" onclick="Remove(this)">8</div> 
+        <div class="circle" id="output9" style="background-color: #800000; --rand-x: 0.1; --rand-y: 0.6; opacity: 1;" onclick="Remove(this)">9</div> 
+        <div class="circle" id="output10" style="background-color: #A52A2A; --rand-x: 0.2; --rand-y: 0.3; opacity: 1;" onclick="Remove(this)">10</div> 
+        <input type="button" value="Вернуть" onclick="Return()"> 
+    </main>
+
+    <footer ondblclick="showThanks()">
+        &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
