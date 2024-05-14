@@ -62,6 +62,21 @@
             screens[1].style.display = 'block';
             startGame();
         }
+        function showHelp() {
+            let helpBlock = document.getElementById('help-block');
+            let showHelpButton = document.getElementById('show-help');
+
+            helpBlock.style.display = 'block';
+            showHelpButton.style.display = 'none';
+        }
+
+        function hideHelp() {
+            let helpBlock = document.getElementById('help-block');
+            let showHelpButton = document.getElementById('show-help');
+
+            helpBlock.style.display = 'none';
+            showHelpButton.style.display = 'block';
+        }
     </script>
 </head>
 <body>
@@ -74,7 +89,19 @@
         <button onclick="startGame()">
             Сыграть в игру
         </button>
-    </div>
+        <button id="show-help" onclick="showHelp()">Показать правила игры</button>
+        <div class="help-block" id="help-block" style="display: none;">
+            <h2>Правила игры</h2>
+            <ol type="I">
+                <li>Нажмите на кнопку "Сыграть в игру"</li>
+                <li>Придумайте число в диапазоне от 1 до 100</li>
+                <li>Затем введите его</li>
+                <li>Далее нажмите кнопку "Угадать"</li>
+                <li>Попробуйте угадать еще раз, нажав на кнопку "Сыграть еще"</li>
+            </ol>
+            <button onclick="hideHelp()">Скрыть правила игры</button>
+        </div>
+    </div >
 
     <div class="game" style="display: none;">
         <h1>Угадай число!</h1>
