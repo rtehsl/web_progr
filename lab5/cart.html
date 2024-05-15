@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевязко Алина Юрьевна. Корзина</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon_io/favicon-16x16.png">
+    <link rel="icon" href="../favicon_io/favicon-32x32.png">
+</head>
+<script>
+          function showSum() {
+            let inputA = document.getElementById("productA");
+            let inputB = document.getElementById("productB");
+            let inputC = document.getElementById("productC");
+            let inputD = document.getElementById("productD");
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            a= isNaN(a) ? 0: a;
+            b= isNaN(b) ? 0: b;
+            c= isNaN(c) ? 0: c;
+            d= isNaN(d) ? 0: d;
+
+            let result = a * 100 + b * 80 + c * 150 + d * 300;
+            
+            let price = document.getElementById("price");
+            
+            price.innerHTML = "Итого: " + result + "₽";
+        }
+        function showClean() {
+            productA.value = "";
+            productB.value = "";
+            productC.value = "";
+            productD.value = "";
+            productE.value = "";
+            price.innerHTML = "";
+        }
+     function showThanks() {
+            let thanks = 'Спасибо, что посетили мой сайтик! \nНа случай, если буду нужен, то я там же, где и был, когда был не нужен.';
+            alert(thanks);
+        }
+</script>
+<style>
+        .basket {
+            margin-top: 10px;
+            background-color: #fff5d7;
+            border: 2px solid #ff5e6c;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            color: #333;
+            font-size: 15px;
+            position: absolute;
+            left: 35%;
+            transition: 2s;
+        }
+        .basket:hover{
+            transform: scale(1.05);
+            flex-wrap: wrap;
+        }
+        .product {
+            margin: 5px;
+            padding: 7px;
+            border-radius: 10px;
+            color: black;
+        }
+        .button {
+            margin: 5px;
+            display: inline-block;
+        }
+        #price {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+            margin: auto;
+        }
+        input {
+            font-size: 14px;
+        }
+    </style>
+<body>
+   <header onclick="showAuthor()">
+    НГТУ, ФБ, Лабораторная работа 5
+   </header>
+   
+   <main>
+        <div class="basket">
+            <h1>Корзина товаров</h1>
+
+            <div class="product">
+                <label>
+                    яблоки<br>(100 руб./шт)<br><input type="number" min="0" placeholder="Количество в шт" id="productA">
+                </label><br>
+            </div>
+
+            <div class="product">
+                <label>
+                   груши<br>(80 руб./шт)<br><input type="number" min="0" placeholder="Количество в шт" id="productB">
+                </label><br>
+            </div>
+            
+            <div class="product">  
+                <label>
+                    апельсины <br>(150 руб./шт)<br><input type="number" min="0" placeholder="Количество в шт" id="productC">
+                </label><br>
+            </div>
+            
+            <div class="product">
+                <label>
+                    дыни<br>(300 руб./шт)<br><input type="number" min="0" placeholder="Количество в шт" id="productD">
+                </label><br>
+            </div>
+
+            <div class="button">
+                <input type="button" value="Рассчитать" onclick="showSum()">
+            </div>
+            <div id="price"></div>
+            <div class="button">
+                <input type="button" value="Очистить" onclick="showClean()">
+            </div>
+        </div>
+   </main>
+
+   <footer ondblclick="showThanks()">
+       &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+   </footer>
+</body>
+</html>

@@ -55,8 +55,15 @@
         }
         function changeOutput() {
             let output = document.getElementById('output')
-            output.innerHTML = 'Нажата кнопка 1';
-            output.style.backgroundColor = 'whitesmoke'
+            output.innerHTML = 'Нажата кнопка';
+        }
+        function changeOutput (buttonNum, backColor, textColor, borderRad, textAlign) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderRadius = borderRad;
+            output.style.textAlign = textAlign;
         }
     </script>
     <style>
@@ -64,8 +71,8 @@
             cursor: pointer;
             padding: 20px;
             text-align: center;
-            background-color: whitesmoke;
-            border: 2px dashed paleturquoise;
+            background-color: #ffffff;
+            border: 2px dashed #feb300;
             margin: 15px;
             display: inline-block;
             border-radius: 20px;
@@ -93,20 +100,15 @@
         <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
-
         <div class="message" onclick="showRaz()">Найти разность чисел</div>
-
         <div class="message" onclick="showPro()">Найти произведение чисел</div>
-
         <div class="message" onclick="showDel()">Найти деление чисел</div>
-
         <div class="message"  onclick="showAuthor()">Узнать, кто автор страницы</div>
-
         <div>
-            <input type="button" value="Кнопка 1" onclick="changeOutput()">
-            <input type="button" value="Кнопка 2">
-            <input type="button" value="Кнопка 3">
-            <input type="button" value="Кнопка 4">
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'black', '20px', 'center')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'white', 'red', '20px', 'center')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'blue', 'purple', '20px', 'center')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'orange', 'yellow', '20px', 'center')">
         </div>
 
         <div id="output"></div>

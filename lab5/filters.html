@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon_io/favicon-16x16.png">
+    <link rel="icon" href="../favicon_io/favicon-32x32.png">
+    <script>
+        function blurChange() {
+            let value = document.getElementById('blurValue').value + 'px';
+            document.getElementById('blurOutput').innerText = value;
+            document.getElementById('blurCats').style.filter = 'blur(' + value + ')';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторные работы
+        <hr>
+    </header>
+
+    <main>
+        <div>
+            Фильтр блюр: 
+            <input type="range" min="0" max="30" value="0" onchange="blurChange()" id="blurValue">
+            <span id="blurOutput"></span>
+        </div>
+        <div><img src="photo_2024-05-14_17-12-57.jpg" id="blurCats"></div>
+    </main>
+
+    <footer>
+        &copy;Перевязко Алина, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>

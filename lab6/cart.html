@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевязко Алина Юрьевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon_io/favicon-16x16.png">
+    <link rel="icon" href="../favicon_io/favicon-32x32.png">
+    <style>
+        .basket {
+    margin-top: 10px;
+    background-color: #fff5d7; 
+    border: 2px solid;
+    border-color: #ff5e6c;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    color: #333; 
+    font-size: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 2s;
+}
+
+.product {
+    margin: 5px;
+    padding: 7px;
+    border-radius: 10px;
+    color: #333; 
+}
+
+.button {
+    margin: 5px;
+    display: inline-block;
+}
+
+#price {
+    border: 1px solid;
+    width: 300px;
+    height: 40px;
+    margin: auto;
+}
+
+input {
+    font-size: 14px;
+}
+    </style>
+    <script>
+        const products = [
+            { id: 'productA', name: 'Бананы', price: 102 },
+            { id: 'productB', name: 'Яблоки', price: 69 },
+            { id: 'productC', name: 'Мандарины', price: 178 },
+            { id: 'productD', name: 'Виноград', price: 96 },
+            { id: 'productE', name: 'Лимоны', price: 67 },
+            { id: 'productF', name: 'Помидоры', price: 70 },
+            { id: 'productG', name: 'Огурцы', price: 34 }
+        ];
+
+        function createProductElement(product) {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'product';
+
+            const label = document.createElement('label');
+            const productName = document.createTextNode(`${product.name} (${product.price} руб./шт)`);//Это шаблонная строка,
+            // которая использует интерполяцию для вставки значения свойства name из объекта product.
+            // product - это элемент из массива availableProducts, который передается в функцию createProductElement.
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.min = 0;
+            input.placeholder = 'Количество в шт';
+            input.id = product.id;
+
+            label.appendChild(productName); // Добавляет текстовый узел productName, который содержит название и цену продукта,
+            // внутрь элемента label.
+            label.appendChild(document.createElement('br'));//Создает новый элемент <br> (перенос строки) и добавляет его внутрь элемента label.
+             //Это сделано для того, чтобы отделить название продукта и поле ввода количества на новую строку.
+            label.appendChild(input);//добавляет элемент input, который является полем для ввода количества продукта, внутрь элемента label.
+            label.appendChild(document.createElement('br'));
+
+            productDiv.appendChild(label);// Добавляет элемент label, который содержит в себе название продукта,
+            // поле ввода количества и элементы <br>,
+            // внутрь элемента div, который представляет собой контейнер для каждого продукта.
+            return productDiv;//Возвращает элемент div, который содержит в себе все добавленные элементы, в качестве результата работы функции.
+        }
+
+        function addProductsToCart() {
+            const cartDiv = document.getElementById('cart');
+            products.forEach(product => { //Этот метод перебирает каждый элемент в массиве products.
+                // Для каждого элемента выполняется функция, которая определена внутри фигурных скобок 
+                const productElement = createProductElement(product);
+                cartDiv.appendChild(productElement);
+            });
+        }
+
+        function showSum() {
+            let totalPrice = 0;
+            let errorMessage = '';
+            let atLeastOneProduct = false;
+
+            products.forEach(product => {
+                const count = parseInt(document.getElementById(product.id).value, 10);
+                if (count < 0) {
+                    errorMessage = 'Количество товара не может быть отрицательным.';
+                    return;
+                }
+                if (count > 0) {
+                    atLeastOneProduct = true;
+                    totalPrice += count * product.price;
+                }
+            });
+            const balance = parseFloat(document.getElementById('balance').value);
+            if (totalPrice > balance) {
+                errorMessage = 'Недостаточно средств на балансе.';
+            }
+
+            document.getElementById('price').innerHTML = errorMessage ? errorMessage : `Итого: ${totalPrice}₽`;
+        }
+
+        function showClean() {
+            products.forEach(product => {
+                document.getElementById(product.id).value = '';
+            });
+            document.getElementById('price').innerHTML = '';
+        }
+
+        function checkout() {
+            const balance = parseFloat(document.getElementById('balance').value);
+            let totalPrice = 0;
+            let errorMessage = '';
+            let atLeastOneProduct = false;
+
+            products.forEach(product => {
+                const count = parseInt(document.getElementById(product.id).value, 10);
+                if (count < 0) {
+                    errorMessage = 'Количество товара не может быть отрицательным.';
+                    return false;
+                }
+                if (count > 0) {
+                    atLeastOneProduct = true;
+                    totalPrice += count * product.price;
+                }
+            });
+
+            if (!atLeastOneProduct) {
+                errorMessage = 'Нужно выбрать хотя бы один товар.';
+            } else if (totalPrice > balance) {
+                errorMessage = 'Недостаточно средств на балансе.';
+            } else {
+                errorMessage = 'Оформление успешно.';
+            }
+
+            document.getElementById('balance-error').textContent = errorMessage;
+            document.getElementById('total-price').textContent = totalPrice > 0 ? `Итого: ${totalPrice}₽` : '';
+        }
+
+        window.onload = addProductsToCart;
+    </script>
+</head>
+<body>
+   <header>
+    НГТУ, ФБ, Лабораторная работа 6
+   </header>
+   
+   <main>
+    <div class="basket">
+        <h1>Корзина товаров</h1>
+        <label for="balance">Мой баланс:</label>
+        <input type="number" id="balance" value="1000" min="0" step="0.01" required="">
+        <div id="balance-error"></div>
+
+        <div id="cart">
+            <input type="button" value="Рассчитать" onclick="showSum()">
+        </div>
+        <div id="price"></div>
+        <div class="button">
+            <input type="button" value="Очистить" onclick="showClean()">
+        </div>
+    </div>
+    <div id="total-price"></div>
+</main>
+   <footer>
+       &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+   </footer>
+</body>
+</html>

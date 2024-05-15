@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевязко Алина Юрьевна. Угадай число</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon_io/favicon-16x16.png">
+    <link rel="icon" href="../favicon_io/favicon-32x32.png">
+    <style>
+        .game {
+        margin-top: 10px;
+        background-color: #fff5d7;
+        border: 2px solid #ff5e6c; 
+        width: 400px;
+        text-align: center;
+        color: #333; 
+        font-size: 15px;
+        left: 35%;
+        transition: 1s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+    </style>
+    <script>
+        let number;
+        let count = 0;
+        function startGame() {
+            number = Math.floor( Math.random() * 100 ) + 1;
+            let screens = document.getElementsByClassName('game')
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+        function guess() {
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+            let message = document.getElementById('result');
+            if (isNaN(userNumber)) {
+                message.innerHTML = 'Пожалуйста, введите число';
+                return;
+            }
+            userNumber = parseInt(userNumber);
+            count++;
+
+            if(userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            }
+            else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            }
+            else {
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;
+            }
+            }
+        function again(params) {
+            let screens = document.getElementsByClassName('game');
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'block';
+            startGame();
+        }
+        function showHelp() {
+            let helpBlock = document.getElementById('help-block');
+            let showHelpButton = document.getElementById('show-help');
+
+            helpBlock.style.display = 'block';
+            showHelpButton.style.display = 'none';
+        }
+
+        function hideHelp() {
+            let helpBlock = document.getElementById('help-block');
+            let showHelpButton = document.getElementById('show-help');
+
+            helpBlock.style.display = 'none';
+            showHelpButton.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+   <header>
+    НГТУ, ФБ, Лабораторная работа 6
+   </header>
+   
+   <main>
+    <div class="game">
+        <button onclick="startGame()">
+            Сыграть в игру
+        </button>
+        <button id="show-help" onclick="showHelp()">Показать правила игры</button>
+        <div class="help-block" id="help-block" style="display: none;">
+            <h2>Правила игры</h2>
+            <ol type="I">
+                <li>Нажмите на кнопку "Сыграть в игру"</li>
+                <li>Придумайте число в диапазоне от 1 до 100</li>
+                <li>Затем введите его</li>
+                <li>Далее нажмите кнопку "Угадать"</li>
+                <li>Попробуйте угадать еще раз, нажав на кнопку "Сыграть еще"</li>
+            </ol>
+            <button onclick="hideHelp()">Скрыть правила игры</button>
+        </div>
+    </div >
+
+    <div class="game" style="display: none;">
+        <h1>Угадай число!</h1>
+        <div>
+            Задумано число от 1 до 100. Угадайте, какое?<br>
+            <input type="number" value="" min="1" max="100" id="user-number"><br>
+            <button onclick="guess()">Угадать</button>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <div class="game" style="display: none;">
+        <h1>Поздравляем, вы выиграли!</h1>
+        <div>
+            Задуманное число: <span id="number"></span>
+        </div>
+        <div>
+            Количество попыток: <span id="try-count"></span>
+        </div>
+        <div>
+            <button onclick="again()">Сыграть еще раз</button>
+        </div>
+    </div>
+   </main>
+   <footer>
+       &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+   </footer>
+</body>
+</html>
