@@ -10,19 +10,20 @@
     <link rel="icon" href="../favicon_io/favicon-32x32.png">
     <style>
         div {
-            border: 4px solid #ff5e6c;
-            border-radius: 20%;
-            margin: 20px auto;
-            padding: 10px;
-            align-self: center;
-            display: block;
-            width: 25% ;
-            text-align: center;
-        }
+                border: 4px solid salmon;
+                border-radius: 20%;
+                margin: 20px;
+                padding: 10px;
+                align-self: left;
+                display: block;
+                width: 25% ;
+                text-align: center;
+            }
 
-        button {
-            margin-top: 10px;
-        }
+            button {
+                margin-top: 10px;
+            }
+        
     </style>
     <script>
         function addNewBlock() {
@@ -31,6 +32,23 @@
                 newBlock.style.height = '40px';
                 document.querySelector('main').appendChild(newBlock);
         }
+        function addNewBlocks() {
+                let main = document.querySelector('main')
+                let widthh = 0
+                let times = parseInt(document.getElementById('blocks').value)
+                if(times > 0) {
+                    for( let i = 1; i <= times; i++) {
+                        widthh += 20;
+                        let newBlock = document.createElement('div');
+                        newBlock.style.background = 'yellow';
+                        newBlock.style.height = '40px';
+                        newBlock.style.width = 250 + widthh + 'px';
+                        newBlock.innerHTML = `Блок номер ${i}: 2 * ${i} <sup>2</sup> = ${2 * i**2}`; 
+                        main.appendChild(newBlock);
+                    }
+                }
+                
+            }
     </script>
 </head>
 <body>
@@ -39,8 +57,15 @@
    </header>
    
    <main>
+    <div class="blocks">
+        <input type="text" id="blocks" placeholder="введите кол-во блоков">
         <button onclick="addNewBlock()">Добавить блок</button>
-   </main>
+        <button onclick="addNewBlocks()">Добавить блоки</button>
+    </div>
+</main>
 
-   <footer>
-       
+   <footer> 
+        &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>

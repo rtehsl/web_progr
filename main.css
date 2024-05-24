@@ -16,8 +16,6 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     overflow-x: hidden;
 }
 
@@ -88,18 +86,6 @@ a:active {
     opacity: 0.3;
     color: var(--text-color);
     opacity: 0.7;
-}
-
-div.menu {
-    border: 2px solid var(--sleuthe-yellow);
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background: var(--menu-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 div.menu:hover {
