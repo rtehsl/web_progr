@@ -21,7 +21,8 @@
             }
 
             button {
-                margin-top: 10px;
+                margin-top: 8px;
+                border-radius: 30%;
             }
         
     </style>
@@ -105,6 +106,33 @@
                     main.appendChild(newBlock);
                 }
             }
+            function greenRed() {
+                let main = document.querySelector('main');
+                let times = parseInt(document.getElementById('greenRed').value)
+                for(i = times; i > 0; i--) {
+                    let newBlock = document.createElement('div');
+                    newBlock.style.width = '30px';
+                    newBlock.style.height = '30px'; 
+                    newBlock.style.borderRadius = '50%'; 
+                    newBlock.style.color = 'black'; 
+                    newBlock.style.fontSize = '20px';
+                    newBlock.style.fontWeight = 'bold'; 
+                    newBlock.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'; 
+                    newBlock.style.display = 'inline-block'
+                    newBlock.style.border = '1px'
+                    if(i % 2 == 0){
+                        newBlock.style.backgroundColor = 'green'; 
+                    }
+
+                    else{
+                        newBlock.style.backgroundColor = 'red'; 
+                    }
+                    newBlock.innerHTML = `${i}`;
+
+                    main.appendChild(newBlock);
+                }
+            }
+
     </script>
 </head>
 <body>
@@ -120,6 +148,8 @@
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_80()">10 => -80</button>
         <button onclick="opacityChange()">Полупрозрачные блоки</button>
+        <input type="text" id="greenRed" placeholder="введите кол-во блоков">
+        <button onclick="greenRed()">Добавить зеленые\красные блоки</button>
     </div>
 </main>
 
