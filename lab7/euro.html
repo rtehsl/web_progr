@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевязко Алина Юрьевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon_io/favicon-16x16.png">
+    <link rel="icon" href="../favicon_io/favicon-32x32.png">
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const currentRate = data.Valute.EUR.Value;
+                    const previousRate = data.Valute.EUR.Previous;
+                    const difference = currentRate - previousRate;
+                    const message = difference > 0 ? 'Курс евро поднялся' : 'Курс евро опустился';
+                    const rateInfo = `
+                        <div class="exchange-rate-info">
+                            <h2>Курс евро</h2>
+                            <p>Дата запроса: ${data.Date}</p>
+                            <p>Текущий курс: ${currentRate}</p>
+                            <p>Прошлый курс: ${previousRate}</p>
+                            <p>Разница: ${difference.toFixed(2)} (${message})</p>
+                        </div>
+                    `;
+                    document.getElementById('exchange-rate').innerHTML = rateInfo;
+                });
+        }
+        function getWeatherForecast() {
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const temp8am = json.hourly.temperature_2m[8];
+                    const temp12pm = json.hourly.temperature_2m[12];
+                    const temp8pm = json.hourly.temperature_2m[20];
+                    let text1 = document.getElementById('text') 
+                    text1.innerHTML = 'Погода в Новосибирске'
+                    text1.style.fontSize = 24 + 'px';
+                    text1.style.marginBottom = 15 + 'px'
+                    document.getElementById('temperature8am').innerText = `Температура в 8 утра: ${temp8am} °C`;
+                    document.getElementById('temperature12pm').innerText = `Температура в 12 дня: ${temp12pm} °C`;
+                    document.getElementById('temperature8pm').innerText = `Температура в 20 вечера: ${temp8pm} °C`;
+                })
+        }
+        
+    </script>
+    <style>
+        a{
+            text-decoration: none;
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .course {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #0056b3;
+            padding: 20px;
+            text-align: center;
+        }
+        .weather {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #4ac3c7;
+            padding: 20px;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <header>
+    НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <a href="https://www.cbr-xml-daily.ru/">API для курсов ЦБ РФ</a>
+        <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <div  class="course" id="exchange-rate"></div>
+        <button onclick="getWeatherForecast()">Прогноз погоды</button>
+        <div class="weather">
+            <div id="text"></div>
+            <div id="temperature8am"></div>
+            <div id="temperature12pm"></div>
+            <div id="temperature8pm"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
