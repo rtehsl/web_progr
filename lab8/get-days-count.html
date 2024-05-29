@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевязко Алина Юрьевна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script src="get-days-count.js"></script>
+    <style>
+        main {
+            padding: 20px;
+        }
+        .frame {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input[type="date"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        #count-days {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+
+    <main>
+        <div class="frame">
+            <div>
+                <label for="birthday">Дата рождения:</label>
+                <input type="date" id="birthday">
+            </div>
+            <div>
+                <button onclick="showDaysCount()">Показать число дней</button>
+            </div>
+            <div id="count-days"></div>
+            <button onclick="clearInput()">Очистить поля ввода и выводы</button>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
