@@ -10,38 +10,46 @@
     <link rel="icon" href="../favicon_io/favicon-32x32.png">
     <script>
         function showSum() {
-            let inputA = document.getElementById('numberA')
-            let inputB = document.getElementById('numberB')
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let inputC = document.getElementById('numberC');
 
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
-            let result = a+b;
-            alert('Cумма '+a+' и '+b+' равна' + result);
+            let c = parseInt(inputC.value);
+            let result = a + b + c;
+            alert('Cумма '+a+' и '+b+' и '+c+' равна ' + result);
         }
         function showRaz() {
             let inputA = document.getElementById('numberA')
             let inputB = document.getElementById('numberB')
+            let inputC = document.getElementById('numberC')
 
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
             let result = a-b;
             alert('Разность '+a+' и '+b+' равна' + result);
         }
         function showPro() {
             let inputA = document.getElementById('numberA')
             let inputB = document.getElementById('numberB')
+            let inputC = document.getElementById('numberC')
 
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
             let result = a*b;
             alert('Произведение '+a+' и '+b+' равна' + result);
         }
         function showDel() {
             let inputA = document.getElementById('numberA')
             let inputB = document.getElementById('numberB')
+            let inputC = document.getElementById('numberC')
 
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
             let result = a/b;
             alert('Деление '+a+' и '+b+' равна' + result);
         }
@@ -97,8 +105,9 @@
    </header>
    
    <main>
-        <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
-        <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+        <label>Первое число: <input type="number" value="" id="numberA"></label><br>
+        <label>Второе число: <input type="number" value="" id="numberB"></label><br>
+        <label>Третье число: <input type="number" value="" id="numberC"></label><br>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
         <div class="message" onclick="showRaz()">Найти разность чисел</div>
         <div class="message" onclick="showPro()">Найти произведение чисел</div>
