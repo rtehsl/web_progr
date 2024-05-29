@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Перевязко Алина Юрьевна. Лабораторная 7</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <script>
+            function getWeatherForecast() {
+                const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.934596&current=temperature_2m&hourly=temperature_2m&timezone=Asia%2FBangkok&forecast_days=1';
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        const times = data.hourly.time;
+                        const temperatures = data.hourly.temperature_2m;
+                        const timeIndices = {
+                            '08:00': times.findIndex(time => time.endsWith('T08:00')),
+                            '12:00': times.findIndex(time => time.endsWith('T12:00')),
+                            '20:00': times.findIndex(time => time.endsWith('T20:00'))
+                        };
+                        const weatherHTML = `
+                            <div class="inf">
+                                <h3>Прогноз погоды на сегодняшний день в Новосибирске:</h3>
+                                <div>Температура в 8 часов утра: ${temperatures[timeIndices['08:00']]}°C</div>
+                                <div>Температура в 12 часов дня: ${temperatures[timeIndices['12:00']]}°C</div>
+                                <div>Температура в 20 часов вечера: ${temperatures[timeIndices['20:00']]}°C</div>
+                            </div>
+                        `;
+                        document.getElementById('output').innerHTML = weatherHTML;
+                    })
+            }
+        </script>
+
+        <style>
+            button {
+                border-radius: 5px;
+                margin-left: 145px;
+                margin-top: 50px;
+                margin-bottom: 30px;
+                color: #ffffff;
+                background-color: rgb(169, 131, 184);
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+            .inf {
+                color: #b93737;
+                text-align: center;
+                border: 2px solid #5c1f1f;
+                padding: 10px;
+                border-radius: 5px;
+                margin: 10px 0;
+                background-color: whitesmoke;
+                font-family: Arial, sans-serif;
+                width: fit-content;
+                height: fit-content;
+            }
+            .inf h2 {
+                font-size: 25pt;
+                margin-bottom: 10px;
+            }
+            .inf div {
+                margin: 5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+        </header>
+        <main>
+            <button onclick="getWeatherForecast()">Получить прогноз погоды</button>
+            <div id="output"></div>
+        </main>
+        <footer>
+            &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024    
+        </footer>
+    </body>
+</html>

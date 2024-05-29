@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевязко Алина Юрьевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon_io/favicon-16x16.png">
+    <link rel="icon" href="../favicon_io/favicon-32x32.png">
+    <style>
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .info1{
+            margin: 5px auto;
+            text-align: center;
+        }
+        .info2{
+            margin: 5px auto;
+            text-align: center;
+        }
+        .info3{
+            margin: 5px auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        let tableDrawn = false; // Переменная для отслеживания отрисованной таблицы
+
+        function showStocks() {
+            if (!tableDrawn) { // Если таблица еще не отрисована
+                const stock = [16.70, 16.72, 17.38, 17.46, 17.44, 17.14, 17.90, 18.30, 17.94, 18.12];
+                const date = ['02.05.2024', '03.05.2024', '06.05.2024', '07.05.2024', '08.05.2024', '10.05.2024', '13.05.2024', '14.05.2024', '15.05.2024', '16.05.2024'];
+                let table = document.getElementById('table');
+                for(let i = 0; i < stock.length; i++) {
+                    let tr = document.createElement('tr');
+                    let td1 = document.createElement('td');
+                    let td2 = document.createElement('td');
+                    let td3 = document.createElement('td');
+                    td1.innerText = date[i];
+                    td2.innerText = stock[i];
+                    if (i > 0) {
+                        let diff = stock[i] - stock[i - 1];
+                        td3.innerText = diff.toFixed(2);
+                    } 
+                    else {
+                        td3.innerText = '';
+                    }
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+                    table.appendChild(tr);
+                    table.style.margin = 'auto';
+                    table.style.border = '1px solid';
+                }
+                let sum = 0;
+                for(let i = 0; i < stock.length; i++) {
+                    sum += stock[i];
+                }
+                let average = sum / stock.length;
+                average = average.toFixed(2);
+                let detail1 = document.getElementById('info1');
+                detail1.innerText = `Среднее значение: ${average}`;
+
+                let max = Math.max(...stock);
+                let min = Math.min(...stock);
+                let detail2 = document.getElementById('info2');
+                detail2.innerText = `Максимальное значение: ${max}`;
+                let detail3 = document.getElementById('info3');
+                detail3.innerText = `Минимальное значение: ${min}`;
+
+                tableDrawn = true; // Устанавливаем флаг, что таблица отрисована
+            }
+        }
+    </script>
+    
+</head>
+
+<body>
+    
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <div class="stocks">
+            <button onclick="showStocks()">Курс акций Центральный телеграф</button>
+            <table border="1" id="table"></table>
+            <div class="info1" id="info1"></div>
+            <div class="info2" id="info2"></div>
+            <div class="info3" id="info3"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Перевязко Алина, ФБИ-21, 2 курс, 2024
+    </footer>
+
+</body>
+</html>
