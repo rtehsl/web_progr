@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.header {
+    background-color: white;
+    padding: 0px 130px;
+    width: 1903px;
+    display: flex; 
+    align-items: center; 
+    z-index: 10;
+}
+.logo {
+    width: 5.8%;
+    margin-left: 93px;
+    margin-top: 9px;
+    padding-bottom: 10px;
+}
+.header a { 
+    color: rgb(96, 105, 129);
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    padding-top: 14px;
+    margin-left: 30px;
+    font-family: Mulish;
+    font-weight: 700;
+}
+
+h1 {
+    margin-left: 370px;
+    margin-top: 40px;
+    padding: 0px;
+    font-family: Mulish;
+    color: rgb(182, 193, 221);
+    font-weight:600;
+    font-size: 50px;
+    letter-spacing: -2px;
+}
+body {
+    background: rgb(243, 247, 250);
+    margin: 0;
+}
+.container {
+    height: 600px;
+    width: 1200px;
+    padding-left: 350px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.container div {
+    width: 496px;
+    height: 196px;
+    background-color: white;
+    border-radius: 8px;
+    font-family: Mulish;
+    font-size: 32px;
+    font-weight: 500;
+    color: rgb(47, 52, 65);
+    padding: 40px;
+    position: static;
+
+}
+
+.container p {
+    margin: 0px;
+}
+
+.container img {
+    bottom: 85px;
+    left: 210px;
+    position: relative;
+    z-index: 1;
+}
+
+.container button {
+    margin-top: 100px;
+    cursor: pointer;
+    width: 176px;
+    height: 56px;
+    border-radius: 8px;
+    font-family: Mulish;
+    font-size: 18px;
+    color: rgb(10, 40, 150);
+    font-weight: 500;
+    background-color: #f3f7fa;
+    border: none;
+}
+
+.b1 {
+    border-radius: 8px;
+    height:  60px;
+    width: 180px;
+    font-family: Mulish;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(10, 40, 150);
+    background-color: rgb(243, 247, 250);
+    border-color: rgb(243, 247, 250);
+}
+
+.d5 {
+    width: 1100px;
+    height: 150px;
+    background: linear-gradient(rgb(0, 69, 207) 0%, rgb(0, 126, 233) 100%);
+    border-radius: 8px;
+    font-family: Mulish;
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 500;
+    display: inline-flex;
+    padding: 40px;
+    color: white;
+    margin-left: 360px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+.d5 p {
+    margin: 0;
+}
+
+.i5 {
+    margin-left: 440px;
+    height: 155px;
+    width: 155px;
+}
+.b2 {
+    font-family: Mulish;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(10, 40, 150);
+    border-radius: 8px;
+    background-color: white;
+    border-color: white;
+    padding: 20px;
+    height: 69px;
+    width: 330px;
+}
+.d6 {
+    width: 1096px;
+    height: 275px;
+    background: white;
+    border-radius: 8px;
+    font-family: Mulish;
+    padding: 0px 40px;
+    margin-left: 362px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.div1 {
+    width: 700px;
+    margin-right: 100px;
+    margin-top: 40px;
+}
+
+
+.div2 {
+    width: 360px;
+}
+
+.p {
+    font-size: 32px;
+    color: rgb(47, 52, 65);
+    font-weight: 500;
+    margin: 0;
+    width: 600px;
+}
+.p1 {
+    font-size: 15px;
+    color: rgb(96, 105, 129);
+    line-height: 0.5;
+}
+.my {
+    font-family: Mulish;
+    color: rgb(47, 52, 65);
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 370px;
+}
+.d7 {
+    border-radius: 8px;
+    border: 3px solid rgb(10, 40, 150);
+    padding: 13px;
+    font-family: Mulish;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(10, 40, 150);
+    background-color: white;
+    margin-left: 370px;
+    margin-right: 1305px;
+    margin-top: 60px;
+}
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-left: 370px;
+  }
+  th, td {
+    border-bottom: 1px solid rgb(182, 193, 221);
+    padding: 10px;
+    text-align: left;
+  }
+  th:first-child, td:first-child {
+    border-left: 0px solid #000;
+  }
+  th:last-child, td:last-child {
+    border-right: 0px solid #000;
+  }
+  .d8 {
+    margin-left: 500px;
+  }
+  .d9 {
+    border-radius: 8px;
+    width: 141px;
+    border: 3px solid rgb(10, 40, 150);
+    padding: 13px;
+    font-family: Mulish;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(10, 40, 150);
+    background-color: white;
+    margin-left: 370px;
+    margin-right: 1375px;
+    margin-top: 60px;
+  }
+  .calc {
+    border-radius: 8px;
+    border: 3px solid rgb(10, 40, 150);
+    padding: 13px;
+    font-family: Mulish;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(10, 40, 150);
+    background-color: white;
+    margin: 200px auto 0px auto;
+  }
+
+  .calc h1 {
+    margin: 0px;
+  }
+
+  .cards {
+    width: 1700px;
+    margin: 20px;
+    padding-left: 210px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 392px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    padding: 40px;
+    font-family: Mulish;
+    border: 2px solid rgb(53, 78, 165);
+    border-radius: 10px;
+  }
+
+  .card h3 {
+    font-size: 28px;
+    color: rgb(53, 78, 165);
+  }
+
+  .card_btn {
+    font-family: Mulish;
+    font-weight: 500;
+    font-size: 22px;
+    border: none;
+    background-color: #f3f7fa;
+    cursor: pointer;
+  }
+ 

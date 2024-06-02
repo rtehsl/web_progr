@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="images/favicon.ico">
+    <script src="main.js"></script>
+</head>
+<body>
+    <header class="header">
+        <img src="images/втб.png" class="logo">
+        <a href="company.html">О банке</a>
+        <a href="news.html">Новости</a>
+        <a href="kurs.html">Курс валют</a>
+        <a href="kontakt.html">Контактные данные</a>
+        <a href="video.html">Видео</a>
+        <img src="images/vtb.png" style="margin-left: 600px">
+    </header>
+    <main>
+        <h1>Новости</h1>
+        <div class="d9">
+            Пресс-релизы
+        </div>
+        <div style="display: flex; align-items:center; flex-wrap:wrap; justify-content: space-around;">
+            <div class="cards">
+                <div class="card" id="news1">
+                    <div style="display: flex; justify-content: space-between">
+                       <p>Пресс-релизы</p>
+                        <p>31.05.2022</p> 
+                    </div>
+                    <h3>Траты клиентов ВТБ на красоту и фитнес этой весной выросли на 17%</h3>
+                    <div id="openNews1" style="display: none;">
+                        <p>Банк ВТБ и Первый ОФД (входит в Группу ВТБ) посчитали 
+                            весенние траты россиян на возможность быть красивыми и 
+                            здоровыми к лету. Общий объем расходов по картам ВТБ в 
+                            бьюти-салонах, кабинетах косметологов, спортивных клубах 
+                            и магазинах составил более 12 млрд рублей, что на 17% выше, 
+                            чем весной прошлого года. Число транзакций увеличилось на 8%.</p>
+                      </div>
+                    <button class="card_btn" onclick="newsOpen(1)" id="btno1"> Читать далее </button>
+                    <button class="card_btn" onclick="newsClose(1)" id='btnc1' style="display: none;"> Скрыть </button>
+                </div>
+                <div class="card" id="news2">
+                    <div style="display: flex; justify-content: space-between">
+                       <p>Пресс-релизы</p>
+                        <p>31.05.2022</p> 
+                    </div>
+                    <h3>Траты клиентов ВТБ на красоту и фитнес этой весной выросли на 17%</h3>
+                    <div id="openNews2" style="display: none;">
+                        <p>Банк ВТБ и Первый ОФД (входит в Группу ВТБ) посчитали 
+                            весенние траты россиян на возможность быть красивыми и 
+                            здоровыми к лету. Общий объем расходов по картам ВТБ в 
+                            бьюти-салонах, кабинетах косметологов, спортивных клубах 
+                            и магазинах составил более 12 млрд рублей, что на 17% выше, 
+                            чем весной прошлого года. Число транзакций увеличилось на 8%.</p>
+                      </div>
+                    <button class="card_btn" onclick="newsOpen(2)" id="btno2"> Читать далее </button>
+                    <button class="card_btn" onclick="newsClose(2)" id='btnc2' style="display: none;"> Скрыть </button>
+                </div>
+                <div class="card" id="news3">
+                    <div style="display: flex; justify-content: space-between">
+                       <p>Пресс-релизы</p>
+                        <p>31.05.2022</p> 
+                    </div>
+                    <h3>Траты клиентов ВТБ на красоту и фитнес этой весной выросли на 17%</h3>
+                    <div id="openNews3" style="display: none;">
+                        <p>Банк ВТБ и Первый ОФД (входит в Группу ВТБ) посчитали 
+                            весенние траты россиян на возможность быть красивыми и 
+                            здоровыми к лету. Общий объем расходов по картам ВТБ в 
+                            бьюти-салонах, кабинетах косметологов, спортивных клубах 
+                            и магазинах составил более 12 млрд рублей, что на 17% выше, 
+                            чем весной прошлого года. Число транзакций увеличилось на 8%.</p>
+                      </div>
+                    <button class="card_btn" onclick="newsOpen(3)" id="btno3"> Читать далее </button>
+                    <button class="card_btn" onclick="newsClose(3)" id='btnc3' style="display: none;"> Скрыть </button>
+                </div>
+                <div class="card" id="news4">
+                    <div style="display: flex; justify-content: space-between">
+                       <p>Пресс-релизы</p>
+                        <p>31.05.2022</p> 
+                    </div>
+                    <h3>Траты клиентов ВТБ на красоту и фитнес этой весной выросли на 17%</h3>
+                    <div id="openNews4" style="display: none;">
+                        <p>Банк ВТБ и Первый ОФД (входит в Группу ВТБ) посчитали 
+                            весенние траты россиян на возможность быть красивыми и 
+                            здоровыми к лету. Общий объем расходов по картам ВТБ в 
+                            бьюти-салонах, кабинетах косметологов, спортивных клубах 
+                            и магазинах составил более 12 млрд рублей, что на 17% выше, 
+                            чем весной прошлого года. Число транзакций увеличилось на 8%.</p>
+                      </div>
+                    <button class="card_btn" onclick="newsOpen(4)" id="btno4"> Читать далее </button>
+                    <button class="card_btn" onclick="newsClose(4)" id='btnc4' style="display: none;"> Скрыть </button>
+                </div>
+                <div class="card" id="news5">
+                    <div style="display: flex; justify-content: space-between">
+                       <p>Пресс-релизы</p>
+                        <p>31.05.2022</p> 
+                    </div>
+                    <h3>Траты клиентов ВТБ на красоту и фитнес этой весной выросли на 17%</h3>
+                    <div id="openNews5" style="display: none;">
+                        <p>Банк ВТБ и Первый ОФД (входит в Группу ВТБ) посчитали 
+                            весенние траты россиян на возможность быть красивыми и 
+                            здоровыми к лету. Общий объем расходов по картам ВТБ в 
+                            бьюти-салонах, кабинетах косметологов, спортивных клубах 
+                            и магазинах составил более 12 млрд рублей, что на 17% выше, 
+                            чем весной прошлого года. Число транзакций увеличилось на 8%.</p>
+                      </div>
+                    <button class="card_btn" onclick="newsOpen(5)" id="btno5"> Читать далее </button>
+                    <button class="card_btn" onclick="newsClose(5)" id='btnc5' style="display: none;"> Скрыть </button>
+                </div>
+                <div class="card" id="news6">
+                    <div style="display: flex; justify-content: space-between">
+                       <p>Пресс-релизы</p>
+                        <p>31.05.2022</p> 
+                    </div>
+                    <h3>Траты клиентов ВТБ на красоту и фитнес этой весной выросли на 17%</h3>
+                    <div id="openNews6" style="display: none;">
+                        <p>Банк ВТБ и Первый ОФД (входит в Группу ВТБ) посчитали 
+                            весенние траты россиян на возможность быть красивыми и 
+                            здоровыми к лету. Общий объем расходов по картам ВТБ в 
+                            бьюти-салонах, кабинетах косметологов, спортивных клубах 
+                            и магазинах составил более 12 млрд рублей, что на 17% выше, 
+                            чем весной прошлого года. Число транзакций увеличилось на 8%.</p>
+                      </div>
+                    <button class="card_btn" onclick="newsOpen(6)" id="btno6"> Читать далее </button>
+                    <button class="card_btn" onclick="newsClose(6)" id='btnc6' style="display: none;"> Скрыть </button>
+                </div>
+                <div class="card" id="news7">
+                    <div style="display: flex; justify-content: space-between">
+                       <p>Пресс-релизы</p>
+                        <p>31.05.2022</p> 
+                    </div>
+                    <h3>Траты клиентов ВТБ на красоту и фитнес этой весной выросли на 17%</h3>
+                    <div id="openNews7" style="display: none;">
+                        <p>Банк ВТБ и Первый ОФД (входит в Группу ВТБ) посчитали 
+                            весенние траты россиян на возможность быть красивыми и 
+                            здоровыми к лету. Общий объем расходов по картам ВТБ в 
+                            бьюти-салонах, кабинетах косметологов, спортивных клубах 
+                            и магазинах составил более 12 млрд рублей, что на 17% выше, 
+                            чем весной прошлого года. Число транзакций увеличилось на 8%.</p>
+                      </div>
+                    <button class="card_btn" onclick="newsOpen(7)" id="btno7"> Читать далее </button>
+                    <button class="card_btn" onclick="newsClose(7)" id='btnc7' style="display: none;"> Скрыть </button>
+                </div>
+                <div class="card" id="news8">
+                    <div style="display: flex; justify-content: space-between">
+                       <p>Пресс-релизы</p>
+                        <p>31.05.2022</p> 
+                    </div>
+                    <h3>Траты клиентов ВТБ на красоту и фитнес этой весной выросли на 17%</h3>
+                    <div id="openNews8" style="display: none;">
+                        <p>Банк ВТБ и Первый ОФД (входит в Группу ВТБ) посчитали 
+                            весенние траты россиян на возможность быть красивыми и 
+                            здоровыми к лету. Общий объем расходов по картам ВТБ в 
+                            бьюти-салонах, кабинетах косметологов, спортивных клубах 
+                            и магазинах составил более 12 млрд рублей, что на 17% выше, 
+                            чем весной прошлого года. Число транзакций увеличилось на 8%.</p>
+                      </div>
+                    <button class="card_btn" onclick="newsOpen(8)" id="btno8"> Читать далее </button>
+                    <button class="card_btn" onclick="newsClose(8)" id='btnc8' style="display: none;"> Скрыть </button>
+                </div>
+                <div class="card" id="news9">
+                    <div style="display: flex; justify-content: space-between">
+                       <p>Пресс-релизы</p>
+                        <p>31.05.2022</p> 
+                    </div>
+                    <h3>Траты клиентов ВТБ на красоту и фитнес этой весной выросли на 17%</h3>
+                    <div id="openNews9" style="display: none;">
+                        <p>Банк ВТБ и Первый ОФД (входит в Группу ВТБ) посчитали 
+                            весенние траты россиян на возможность быть красивыми и 
+                            здоровыми к лету. Общий объем расходов по картам ВТБ в 
+                            бьюти-салонах, кабинетах косметологов, спортивных клубах 
+                            и магазинах составил более 12 млрд рублей, что на 17% выше, 
+                            чем весной прошлого года. Число транзакций увеличилось на 8%.</p>
+                      </div>
+                    <button class="card_btn" onclick="newsOpen(9)" id="btno9"> Читать далее </button>
+                    <button class="card_btn" onclick="newsClose(9)" id='btnc9' style="display: none;"> Скрыть </button>
+                </div>
+                <div class="card" id="news10">
+                    <div style="display: flex; justify-content: space-between">
+                       <p>Пресс-релизы</p>
+                        <p>31.05.2022</p> 
+                    </div>
+                    <h3>Траты клиентов ВТБ на красоту и фитнес этой весной выросли на 17%</h3>
+                    <div id="openNews10" style="display: none;">
+                        <p>Банк ВТБ и Первый ОФД (входит в Группу ВТБ) посчитали 
+                            весенние траты россиян на возможность быть красивыми и 
+                            здоровыми к лету. Общий объем расходов по картам ВТБ в 
+                            бьюти-салонах, кабинетах косметологов, спортивных клубах 
+                            и магазинах составил более 12 млрд рублей, что на 17% выше, 
+                            чем весной прошлого года. Число транзакций увеличилось на 8%.</p>
+                      </div>
+                    <button class="card_btn" onclick="newsOpen(10)" id="btno10"> Читать далее </button>
+                    <button class="card_btn" onclick="newsClose(10)" id='btnc10' style="display: none;"> Скрыть </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

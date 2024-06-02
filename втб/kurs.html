@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс валют</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="images/favicon.ico">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <img src="images/втб.png" class="logo">
+        <a href="company.html">О банке</a>
+        <a href="news.html">Новости</a>
+        <a href="kurs.html">Курс валют</a>
+        <a href="kontakt.html">Контактные данные</a>
+        <a href="video.html">Видео</a>
+        <img src="images/vtb.png" style="margin-left: 600px">
+    </header>
+    <div class="calc" style="width: 700px;">
+        <h1>Калькулятор валют</h1>
+        <p>Актуальный курс: <span id="audToRubRate"></span></p>
+        <input type="number" id="amount" placeholder="Введите сумму">
+        <select id="direction">
+            <option value="audToRub">AUD в RUB</option>
+            <option value="rubToAud">RUB в AUD</option>
+        </select>
+        <button id="convertButton">Перевести</button>
+        <p id="result"></p>
+    </div> 
+    
+
+  <script src="currency_calculator.js"></script>
+</body>
+</html>
